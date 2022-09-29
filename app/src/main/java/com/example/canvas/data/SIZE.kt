@@ -5,9 +5,7 @@ enum class SIZE(
 ) {
     SMALL(4),
     MEDIUM(16),
-    LARGE(32),
-    EXTRA_LARGE(64),
-    MEGA (128);
+    LARGE(32);
 
     companion object {
         private val map = values().associateBy(SIZE::value)

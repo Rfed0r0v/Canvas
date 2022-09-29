@@ -16,10 +16,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val viewModel: CanvasViewModel by viewModel()
-
-
     private var toolsList: List<ToolsLayout> = listOf()
-
     private val paletteLayout: ToolsLayout by lazy { findViewById(R.id.paletteLayout) }
     private val toolsLayout: ToolsLayout by lazy { findViewById(R.id.toolsLayout) }
     private val sizeLayout: ToolsLayout by lazy { findViewById(R.id.sizeLayout) }
@@ -31,7 +28,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         toolsList = listOf(paletteLayout, sizeLayout, toolsLayout)
         viewModel.viewState.observe(this, ::render)
@@ -56,7 +52,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     private fun render(viewState: ViewState) {
         with(toolsList[PALETTE_VIEW]) {
             render(viewState.colorList)
@@ -73,6 +68,5 @@ class MainActivity : AppCompatActivity() {
             isVisible = viewState.isToolsVisible
         }
         drawView.render(viewState.canvasViewState)
-
     }
 }

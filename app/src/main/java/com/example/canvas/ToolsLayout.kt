@@ -19,7 +19,6 @@ class ToolsLayout @JvmOverloads constructor(
 ) : CardView(context, attrs, defStyleAttr) {
 
     private var onClick: (Int) -> Unit = {}
-
     private val toolsList: RecyclerView by lazy { findViewById(R.id.rvTools) }
 
 
@@ -32,19 +31,19 @@ class ToolsLayout @JvmOverloads constructor(
 //        }
 //    )
 
-
     private val adapterDelegate = ListDelegationAdapter(
         colorAdapterDelegate {
             onClick(it)
         },
         toolsAdapterDelegate {
-            onClick(it) },
+            onClick(it)
+        },
 
         sizeAdapterDelegate {
-            onClick(it) }
+            onClick(it)
+        }
 
     )
-
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
@@ -52,7 +51,6 @@ class ToolsLayout @JvmOverloads constructor(
         toolsList.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         toolsList.setAdapterAndCleanupOnDetachFromWindow(adapterDelegate)
     }
-
 
     fun render(list: List<ToolItem>) {
         adapterDelegate.setData(list)

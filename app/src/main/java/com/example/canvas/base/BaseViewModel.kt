@@ -8,7 +8,6 @@ abstract class BaseViewModel<VIEW_STATE> : ViewModel() {
     val viewState: MutableLiveData<VIEW_STATE> by lazy { MutableLiveData(initialViewState()) }
 
     abstract fun initialViewState(): VIEW_STATE
-
     abstract fun reduce(event: Event, previousState: VIEW_STATE): VIEW_STATE?
 
     fun processUiEvent(event: Event) {

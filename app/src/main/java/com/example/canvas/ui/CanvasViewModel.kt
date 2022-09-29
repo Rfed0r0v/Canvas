@@ -13,19 +13,17 @@ import com.example.canvas.model.ToolItem
 class CanvasViewModel : BaseViewModel<ViewState>() {
     override fun initialViewState(): ViewState = ViewState(
 
-
         colorList = enumValues<COLOR>().map { ToolItem.ColorModel(it.value) },
         toolsList = enumValues<TOOLS>().map { ToolItem.ToolModel(it) },
         sizeList = enumValues<SIZE>().map { ToolItem.SizeModel(it.value) },
         canvasViewState = CanvasViewState(
-            color = COLOR.BLACK,
-            size = SIZE.MEDIUM,
+            color = COLOR.BLUE,
+            size = SIZE.SMALL,
             tools = TOOLS.PALETTE
         ),
         isBrushSizeChangerVisible = false,
         isPaletteVisible = false,
         isToolsVisible = false,
-
         )
 
     init {
@@ -39,9 +37,7 @@ class CanvasViewModel : BaseViewModel<ViewState>() {
                     isToolsVisible = !previousState.isToolsVisible,
                     isPaletteVisible = false
                 )
-
             }
-
 
             is UiEvent.OnToolsClick -> {
                 when (event.index) {
