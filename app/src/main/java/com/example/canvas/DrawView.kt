@@ -7,17 +7,21 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewConfiguration
 import androidx.core.content.res.ResourcesCompat
+import com.example.canvas.data.COLOR
+import com.example.canvas.ui.CanvasViewState
 import kotlin.math.abs
+
 
 class DrawView @JvmOverloads constructor(
     context: Context,
+
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
+
     companion object {
         private const val STROKE_WIDTH = 12f
     }
-
 
     private lateinit var extraCanvas: Canvas
     private lateinit var extraBitmap: Bitmap
@@ -25,6 +29,7 @@ class DrawView @JvmOverloads constructor(
     private var drawColor = ResourcesCompat.getColor(resources, COLOR.BLACK.value, null)
 
     private var path = Path()
+
     private var motionTouchEventX = 0f
     private var motionTouchEventY = 0f
 
@@ -47,7 +52,6 @@ class DrawView @JvmOverloads constructor(
         strokeWidth = STROKE_WIDTH
     }
 
-
     fun render(state: CanvasViewState) {
         drawColor = ResourcesCompat.getColor(resources, state.color.value, null)
         paint.color = drawColor
@@ -65,6 +69,7 @@ class DrawView @JvmOverloads constructor(
 //            paint.pathEffect = null
 //        }
     }
+
     fun clear() {
         extraCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR)
         invalidate()
@@ -120,12 +125,14 @@ class DrawView @JvmOverloads constructor(
         curPath.reset()
     }
 
+
     override fun onSizeChanged(width: Int, height: Int, oldWidth: Int, oldHeight: Int) {
         super.onSizeChanged(width, height, oldWidth, oldHeight)
         if (::extraBitmap.isInitialized) extraBitmap.recycle()
         extraBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
         extraCanvas = Canvas(extraBitmap)
     }
+
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)

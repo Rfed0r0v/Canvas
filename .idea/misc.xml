@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Roman/AndroidStudioProjects/Canvas/app/src/main/res/layout/activity_main.xml" value="0.365625" />
+        <entry key="..\:/Users/Roman/AndroidStudioProjects/Canvas/app/src/main/res/drawable-v24/bg_selected.xml" value="0.1805" />
+        <entry key="..\:/Users/Roman/AndroidStudioProjects/Canvas/app/src/main/res/drawable-v24/ic_baseline_brush_24.xml" value="0.1805" />
+        <entry key="..\:/Users/Roman/AndroidStudioProjects/Canvas/app/src/main/res/drawable-v24/ic_baseline_cleaning_services_24.xml" value="0.1805" />
+        <entry key="..\:/Users/Roman/AndroidStudioProjects/Canvas/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Roman/AndroidStudioProjects/Canvas/app/src/main/res/layout/item_palette.xml" value="0.365625" />
+        <entry key="..\:/Users/Roman/AndroidStudioProjects/Canvas/app/src/main/res/layout/item_size.xml" value="0.2828125" />
+        <entry key="..\:/Users/Roman/AndroidStudioProjects/Canvas/app/src/main/res/layout/item_tools.xml" value="0.2828125" />
+        <entry key="..\:/Users/Roman/AndroidStudioProjects/Canvas/app/src/main/res/layout/layout_tools.xml" value="0.25" />
       </map>
     </option>
   </component>
